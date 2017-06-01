@@ -1,0 +1,104 @@
+﻿
+<div class="">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Record</h3>
+    </div>
+
+    <div class="modal-body">
+        <form name="TemplateForm" class="form-horizontal" novalidate>
+
+
+            <div class="block" style="display:none;">
+                <label>Guid</label>
+                <input class="input" type="text" disabled value="{{TemplateController.entity._id}}" />
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Name<em>*</em></label>
+                <div class="col-sm-6">
+                    <input type="text" name="name" ng-model="TemplateController.entity.name" required class="form-control control-wrapper" />
+                    
+                    <span ng-show="TemplateForm.name.$invalid && TemplateForm.name.$touched" class="list-group-item-danger validation-wrapper" >The name is required.</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Category<em>*</em></label>
+                <div class="col-sm-6">
+                    <input type="text" name="category" ng-model="TemplateController.entity.category" required class="form-control control-wrapper" />
+                    <span ng-show="TemplateForm.category.$invalid && TemplateForm.category.$touched" class="list-group-item-danger validation-wrapper">The category is required.</span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Edit Type</label>
+                <div class="col-sm-10">
+
+                    <div class="btn-group" data-toggle="buttons">
+
+                        <label class="btn btn-primary">
+                            <input id="RichTextRadio" type="radio" name="edittype" onclick="ChangeEditType('RichText')" value="RichText" checked> Rich Text
+                        </label>
+
+
+                        <label class="btn btn-primary" style="margin-left:10px;">
+                            <input id="PlainTextRadio" type="radio" name="edittype" onclick="ChangeEditType('PlainText')" value="PlainText"> Plain Text
+                        </label>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div id="TemplatePlain" class="form-group" style="display:none;">
+                <label class="control-label col-sm-2">Template</label>
+                <div class="col-sm-6">
+
+                    <textarea id="plainTextEditor" rows="4" cols="50" ng-model="TemplateController.entity.template" class="form-control"></textarea>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="form-horizontal">
+        <div id="TemplateRich" class="form-group" >
+            <label class="control-label col-sm-2">Template</label>
+            <div class="col-sm-6">
+                <div ng-controller="trixCtrl">
+
+
+                    <trix-editor ng-model-options="{ updateOn: 'blur' }" spellcheck="false" 
+                                 class="trix-content" ng-model="TemplateController.entity.template"
+                                 angular-trix trix-initialize="trixInitialize(e, editor);"
+                                 trix-change="trixChange(e, editor);"
+                                 trix-selection-change="trixSelectionChange(e, editor);"
+                                 trix-focus="trixFocus(e, editor);"
+                                 trix-blur="trixBlur(e, editor);"
+                                 trix-file-accept="trixFileAccept(e, editor);"
+                                 trix-attachment-add="trixAttachmentAdd(e, editor);" 
+                                 trix-attachment-remove="trixAttachmentRemove(e, editor);"
+                                 placeholder="Enter text here....">
+
+                    </trix-editor>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+        <div class="modal-footer">
+            <button class="btn btn-primary btn-md" ng-click="TemplateController.SubmitSave(TemplateForm.$valid)">Save</button>
+            <button class="btn btn-primary btn-md" ng-click="$close()">Close</button>
+        </div>
+</div>

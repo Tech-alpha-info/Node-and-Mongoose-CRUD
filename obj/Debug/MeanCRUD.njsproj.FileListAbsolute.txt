@@ -1,0 +1,2 @@
+C:\CODE\GIT\meanedit\bin\Microsoft.NodejsTools.WebRole.dll
+C:\CODE\GIT\meanedit\obj\Debug\MeanCRUD.njsprojResolveAssemblyReference.cache

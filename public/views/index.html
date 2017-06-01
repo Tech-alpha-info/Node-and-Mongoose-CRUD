@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Template Manager</title>
+
+    <script src="/components/angular.js"></script>
+    <script src="/components/angular-animate.js"></script>
+    <script src="/components/ui-bootstrap-tpls-0.13.4.js"></script>
+    <script src="/components/ui-grid.js"></script>
+    <script src="/components/trix.js"></script>
+    <script src="/components/angular-trix.js"></script>
+    <script src="/components/angular-sanitize.js"></script>
+    
+    <script src="/components/ngtoast.js"></script>
+
+
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/ui-grid.css' />
+    <link rel='stylesheet' href='/stylesheets/trix.css' />
+    <link rel='stylesheet' href='/stylesheets/ngtoast.css' />
+    <link rel='stylesheet' href='/stylesheets/ngtoast-animations.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="/javascripts/grid.controller.js"></script>
+
+</head>
+
+<body ng-app="TemplateManagerApp">
+
+    <toast></toast>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="text-center">
+                    <h2>Template Manager</h2>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <div ng-controller="MainCtrl as TemplateController" class="well">
+                  
+
+                    <div class="well grid-spacer">
+                        <button type="button" id="addRow" class="btn btn-success btn-md" ng-click="addRow()">Add Row</button>
+                    </div>
+
+                    <div id="TemplateGrid"
+                         ui-grid-move-columns
+                         ui-grid-selection
+                         ui-grid-resize-columns
+                         ui-grid-pinning
+                         ui-grid-exporter
+                         ui-grid-auto-resize
+                         ui-grid-edit
+                         ui-grid="TemplateController.TemplateGrid"
+                         class="TemplateManagerAppGrid"></div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>

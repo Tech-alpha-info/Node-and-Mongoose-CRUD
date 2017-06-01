@@ -1,0 +1,90 @@
+﻿
+
+/* App specific overrides */
+
+
+.btn-md  {
+    min-width: 100px;
+
+}
+
+
+
+
+#TemplateGrid .ui-grid-cell-contents {
+    text-align:center;
+     
+}
+
+
+
+#TemplateGrid .ui-grid-cell {
+        min-height:40px;
+        text-align:center;
+}
+
+
+
+
+.template-modal-md > .modal-dialog {
+  width: 80%;
+}
+
+
+
+.template-modal-md .modal-header {
+  background-color:#009933;
+  color:white;
+}
+
+
+trix-toolbar .button_group button.code {
+    display: none!important;
+}
+
+
+trix-toolbar .button_group button.code {
+    display: none!important;
+}
+
+button.nesting-level {
+   display: none!important;
+}
+
+
+
+button.nesting-level {
+   display: none!important;
+}
+
+
+button.heading-1 {
+  display: none!important;
+}
+
+
+.grid-spacer {
+    padding-left: 30px;
+}
+
+
+.validation-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border:1px solid #cc3300;
+    border-radius:5px;
+}
+
+.control-wrapper{
+    margin-bottom:5px;
+}
+
+
+
+.ui-grid-row:nth-child(odd):hover .ui-grid-cell{background:#ffffcc}
+.ui-grid-row:nth-child(even):hover .ui-grid-cell{background:#ffffcc}
+
+.ui-grid-row:nth-child(odd):active .ui-grid-cell{background:#ffffcc}
+.ui-grid-row:nth-child(even):active .ui-grid-cell{background:#ffffcc}
