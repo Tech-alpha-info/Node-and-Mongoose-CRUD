@@ -28,7 +28,7 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "jsonfile": "^3.0.0",
-    "mongoose": "^4.3.1",
+    "mongoose": "^5.10.2",
     "morgan": "^1.6.1"
   }
 }
